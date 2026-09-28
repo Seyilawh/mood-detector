@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Special Human ❤️</title>
+  <style>
+    body {
+      background: #ffe6ef;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 15px;
+      color: #a12b5b;
+    }
+
+    .card {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 30px 20px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px #d98aaa55;
+    }
+
+    h1 { color: #e34b86; }
+
+    button {
+      background: #f06292;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      margin: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d83c75;
+    }
+
+    #message {
+      font-size: 18px;
+      margin-top: 25px;
+      min-height: 60px;
+    }
+
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite alternate;
+    }
+
+    @keyframes beat {
+      to { transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+
+    <h1>Hey, Beautiful! 🥹</h1>
+    <p>I have detected some unusual behaviour...</p>
+    <h3>MOOD STATUS: UNKNOWN 😭</h3>
+
+    <p>Choose your current mood:</p>
+
+    <button onclick="showMessage(0)">Angry 😒</button>
+    <button onclick="showMessage(1)">Sad 🥺</button>
+    <button onclick="showMessage(2)">Bored 😴</button>
+    <button onclick="showMessage(3)">Just hungry 🍕</button>
+
+    <div id="message">
+      Waiting for your response... 👀
+    </div>
+
+    <hr>
+
+    <p>Or just press this button 👇</p>
+    <button onclick="surprise()">Make me smile 😂</button>
+  </div>
+
+  <script>
+    const messages = [
+      "WARNING! Anger detected. Sending 1000 virtual hugs! 🤗",
+      "Aww 🥺. You don't have to pretend to be okay. I'm here for you ❤️",
+      "Boredom detected! Have you tried disturbing your favourite person? 😂",
+      "Ah! So the problem is food! Case closed. 🍕🤣"
+    ];
+
+    const surprises = [
+      "Breaking news: A very beautiful girl has been caught being too cute! 🚨😂",
+      "Scientists have confirmed that smiling is free. Please cooperate with science! 🤣",
+      "ERROR 404: Your smile has not been found. Initiating emergency comedy! 😭",
+      "Congratulations! You've won one imaginary trip to the moon. 🚀😂",
+      "Your boyfriend's brain has stopped working because you're too adorable! 🤣❤️"
+    ];
+
+    function showMessage(index) {
+      document.getElementById("message").innerText =
+        messages[index];
+    }
+
+    function surprise() {
+      const random = Math.floor(Math.random() * surprises.length);
+      document.getElementById("message").innerText =
+        surprises[random];
+    }
+  </script>
+</body>
+</html>
